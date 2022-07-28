@@ -5,7 +5,7 @@ const Form = ({ addItems }) => {
   const [item, setItem] = useState({
     id: "",
     entry: "",
-    bought: false,
+    bought: false
   });
 
   function handleInput(e) {
@@ -14,7 +14,7 @@ const Form = ({ addItems }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (item.item.trim()) {
+    if (item.entry.trim()) {
       addItems({ ...item, id: uuid.v4() });
       setItem({ ...item, entry: "" });
     }
@@ -24,7 +24,7 @@ const Form = ({ addItems }) => {
     <div>
       <form onSubmit={handleSubmit}>
         <input
-          name="Item"
+          name="item"
           type="text"
           value={item.entry}
           onChange={handleInput}
