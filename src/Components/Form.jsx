@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import uuid from "uuid";
+import { v4 as uuid} from "uuid";
 
 const Form = ({ addItems }) => {
   const [item, setItem] = useState({
