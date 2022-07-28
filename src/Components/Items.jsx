@@ -1,9 +1,17 @@
 import React from "react";
 
-const Items = ({ item }) => {
+const Items = ({ item, itemBought, removeItem }) => {
+  function handleBought() {
+    itemBought(item.id)
+  }
+
+  function handleRemoveItem() {
+    removeItem(item.id);
+  }
+
   return (
     <div style={{ display: "flex" }}>
-      <input type="checkbox" />
+      <input type="checkbox" onClick={handleBought} />
       <li
         style={{
           color: "whitesmoke",
@@ -12,7 +20,7 @@ const Items = ({ item }) => {
       >
         {item.entry}
       </li>
-      <button>X</button>
+      <button onClick={handleRemoveItem}>X</button>
     </div>
   );
 };
