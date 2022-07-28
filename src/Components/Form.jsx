@@ -1,22 +1,21 @@
 import React, { useState } from "react";
-import { v4 as uuid} from "uuid";
 
 const Form = ({ addItems }) => {
-  const [item, setItem] = useState({
+  const [item, setGroceryItem] = useState({
     id: "",
     entry: "",
     bought: false
   });
 
   function handleInput(e) {
-    setItem({ ...item, entry: e.target.value });
+    setGroceryItem({ ...item, entry: e.target.value });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     if (item.entry.trim()) {
-      addItems({ ...item, id: uuid.v4() });
-      setItem({ ...item, entry: "" });
+      addItems({ ...item, id: item.entry });
+      setGroceryItem({ ...item, entry: "" });
     }
   }
 

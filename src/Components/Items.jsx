@@ -6,7 +6,7 @@ const Items = ({ item }) => {
       <input type="checkbox" />
       <li
         style={{
-          color: "black",
+          color: "whitesmoke",
           textDecoration: item.bought ? "line-through" : null,
         }}
       >
