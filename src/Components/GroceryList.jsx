@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import Items from "./Items";
 
-const GroceryList = () => {
+const GroceryList = ({ items }) => {
   return (
     <div>
-        This will hold the cards
+      <ul>
+        {items.map((item) => (
+          <Items key={item.id} item={item} />
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default GroceryList
+export default GroceryList;

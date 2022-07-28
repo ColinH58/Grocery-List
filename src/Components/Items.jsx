@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 
-const Items = () => {
+const Items = ({ item }) => {
   return (
     <div>
-        This is where the items will live
+      <input type="checkbox" />
+      <li>{item.task}</li>
+      <button>X</button>
     </div>
-  )
-}
+  );
+};
 
-export default Items
+export default Items;

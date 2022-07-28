@@ -1,16 +1,18 @@
-import './App.css';
-import { 
-  GroceryList, 
-  Form,
-  Items,
-} from './Components';
+import React, { useState } from "react";
+import "./App.css";
+import { GroceryList, Form } from "./Components";
 
 function App() {
+  const [items, setItems] = useState([]);
+
+  function addItems(item) {
+    setItems([item, ...items]);
+  }
+
   return (
     <div>
-    <GroceryList />
-    <Form />
-    <Items />
+      <GroceryList items={items} />
+      <Form addItems={addItems} />
     </div>
   );
 }
