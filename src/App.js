@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div>
+      <h1>Grocery List</h1>
       <GroceryList items={items} />
       <Form addItems={addItems} />
     </div>

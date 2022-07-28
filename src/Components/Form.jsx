@@ -4,19 +4,19 @@ import { v4 as uuid} from "uuid";
 const Form = ({ addItems }) => {
   const [item, setItem] = useState({
     id: "",
-    item: "",
+    entry: "",
     bought: false,
   });
 
   function handleInput(e) {
-    setItem({ ...item, task: e.target.value });
+    setItem({ ...item, entry: e.target.value });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (item.task.trim()) {
+    if (item.item.trim()) {
       addItems({ ...item, id: uuid.v4() });
-      setItem({ ...item, task: "" });
+      setItem({ ...item, entry: "" });
     }
   }
 
@@ -26,10 +26,10 @@ const Form = ({ addItems }) => {
         <input
           name="Item"
           type="text"
-          value={item.task}
+          value={item.entry}
           onChange={handleInput}
         />
-        <button type="submit" />
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
