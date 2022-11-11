@@ -10,11 +10,10 @@ const Items = ({ item, itemBought, removeItem }) => {
   }
 
   return (
-    <div style={{ display: "flex" }}>
+    <div className="Items">
       <input type="checkbox" onClick={handleBought} />
       <li
         style={{
-          color: "whitesmoke",
           textDecoration: item.bought ? "line-through" : null,
         }}
       >
