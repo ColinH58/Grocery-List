@@ -3,15 +3,15 @@ import "./App.css";
 import { GroceryList, Form } from "./Components";
 
 function App() {
-  const [items, setItems] = useState([]);
+  const [groceryItems, setGroceryItems] = useState([]);
 
   function addItems(item) {
-    setItems([item, ...items]);
+    setGroceryItems([item, ...groceryItems]);
   }
 
   function itemBought(id) {
-    setItems(
-      items.map((item) => {
+    setGroceryItems(
+      groceryItems.map((item) => {
         if (item.id === id) {
           return {
             ...item,
@@ -24,7 +24,7 @@ function App() {
   }
 
   function removeItem(id) {
-    setItems(items.filter((item) => item.id !== id));
+    setGroceryItems(groceryItems.filter((item) => item.id !== id));
   }
 
   return (
@@ -32,7 +32,7 @@ function App() {
       <h1>Grocery List</h1>
       <Form addItems={addItems} />
       <GroceryList
-        items={items}
+        groceryItems={groceryItems}
         itemBought={itemBought}
         removeItem={removeItem}
       />
